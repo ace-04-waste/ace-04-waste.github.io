@@ -53,6 +53,67 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
+<h3 id="RAM">RAM</h3>
+
+Edge and Chrome use a tonne of RAM - laptop has one free slot and has 8gb RAM in the other which is 3200 MT/s SODIMM and reserves 623 MB. Didn't realise double clicking creating a handy little real time performance dash. 
+<br>
+<img src="RAM.png" alt="performance dashboard on windows" style ="width: 40%; margin-top: 20px; aspect-ratio: auto;">
+<br>
+original research<br>
+
+1. Analysis of Your Laptop's System Performance
+The RAM Bottleneck: We initially looked at a Windows Task Manager screenshot showing your CPU running smoothly at 8–10%, but your Memory (RAM) maxed out at 92%. This revealed a textbook hardware bottleneck: your processor had plenty of speed to spare, but it was visually choked by a lack of physical workspace.
+The Symptoms (Page Filing): When RAM fills up past 90%, Windows is forced to employ a trick called Virtual Memory or Page Filing, actively moving inactive app data off the fast RAM chips and onto your much slower hard drive/SSD. This explains why apps like Microsoft Edge or Teams stutter when you switch back to them, even if your CPU usage remains low.
+The Culprits: Your primary memory consumers were browser processes (Microsoft Edge taking up over 1.1 GB across 22 processes) and communication platforms (Microsoft Teams running over 540 MB).
+2. Browser Alternatives (From a RAM Perspective)
+While Microsoft Edge features excellent "Sleeping Tabs" optimizations, you asked about more efficient alternatives. We broke down the options by how they treat memory:
+Brave: Excellent for naturally lowering RAM usage because its built-in ad and tracker blocker strips away resource-heavy background scripts before websites even load.
+Mozilla Firefox: Ideal if you are a "tab hoarder" who keeps 20+ tabs open. Unlike Chromium-based browsers (Edge/Chrome) which launch a new process for almost every individual tab, Firefox caps its content processes to prevent linear memory spikes.
+Opera GX: Best for manual enforcement. It includes a built-in RAM Limiter widget that allows you to set a strict ceiling (e.g., maximum 2 GB) on how much memory the browser can consume.
+3. Hardware Upgrades & Cost
+Your second Task Manager screenshot gave us the exact hardware specifications of your Dell laptop: DDR4 SODIMM RAM running at 3200 MT/s, with 1 out of 2 slots used. This means you currently have one 8GB stick installed and an entirely empty slot ready for a quick upgrade:
+Option A (24GB Total): You can purchase a single 16GB DDR4 3200MHz SODIMM laptop stick (approx. £30–£45) and pop it straight into the empty slot. This is the cheapest way to completely eliminate your 92% lag threshold.
+Option B (32GB Total): You can buy a matched 32GB kit consisting of two 16GB sticks (approx. £70–£95), removing your current 8GB stick entirely to run them together in dual-channel configuration.
+Difficulty: This is rated a 2/10 on the difficulty scale. It requires unscrewing the bottom panel of your laptop, angling the stick into the slot, and clicking it down into its side brackets.
+4. Real-Time Tracking & Virus Detection
+We discussed how to use Task Manager to monitor your system and spot rogue malware behavior:
+What to watch: Keep an eye on Disk Response Time (healthy is under 20ms; spikes to 500ms+ indicate a choking drive) and idle Network Throughput (sustained background uploads when you aren't doing anything can mean a virus is leaking data).
+Virus Clues: Watch out for the "Whack-a-Mole" effect where 100% CPU usage drops instantly to 10% the moment you open Task Manager (malware hiding itself), or unrecognized, high-resource processes with random names. Adding the Command Line column in Task Manager allows you to see if innocent-looking files are executing from hidden temporary folders instead of proper system directories.
+5. Smart Software Maintenance
+Windows Updates: We established that you should not check for updates daily, as the background scans waste valuable RAM and CPU power. Instead, you should rely on Windows' automatic background cycle or check manually just once a month. To minimize disruption, we configured your Active Hours to block updates during work, and turned off the "Get latest updates as soon as they are available" feature to ensure you only download stable monthly releases.
+Safe iPhone SE Updating: Because a past update left your device "bricked," you have safely held your iPhone SE on iOS 16.2. We reviewed how to break out of this loop safely if you ever want to optimize your battery life or patch security vulnerabilities:
+Update via Computer: Plug the iPhone directly into your Dell laptop via USB to avoid Wi-Fi drops, letting the computer handle file integration.
+Storage Headroom: Ensure 10 GB to 15 GB of storage space is free on the phone before hitting install so it has room to unpack.
+The Safety Net: Computer updates automatically create an immutable local backup of your photos and data first, allowing you to completely restore your device if a freeze ever occurs.
+
+1. Computer Performance & RAM Management
+• The RAM Bottleneck: A system can experience high RAM usage (e.g., 90%+) even when the CPU is running comfortably at a low percentage (e.g., 10%). This indicates a memory capacity bottleneck rather than a lack of processing power.
+
+• Page Filing Impact: When physical RAM is near capacity, Windows utilizes "Virtual Memory" (Page Filing) to shift background tasks to the hard drive or SSD. This process causes noticeable system stuttering and application lag while the CPU waits for data retrieval.
+
+• Browser Mitigation: Browsers heavily impact RAM. To reduce memory load, users should enable features like Memory Saver or Efficiency Mode to freeze inactive background tabs, or switch to more resource-efficient browsers like Brave or Firefox (which caps content processes for high tab counts).
+
+• Hardware Upgrades: Upgrading laptop memory (RAM) is a straightforward process, especially if an empty SODIMM slot is available. For systems utilizing DDR4 3200MHz RAM, users can cost-effectively add a single 16GB stick (approx. £30-£45) to combine with existing memory or install a full 32GB kit (approx. £70-£95).
+
+2. Windows Updates Scheduling
+• Avoid Daily Updates: Manually checking for or installing updates daily introduces unnecessary background processing lag and is counterproductive.
+
+• Optimal Approach: Rely on Windows' automated background processes, which silently handle stability patches and antivirus definitions during idle periods.
+
+• User Controls: Configure Active Hours to prevent sudden forced restarts during core working windows, and disable the "Get the latest updates as soon as they're available" toggle to ensure the system only receives stable, fully vetted monthly releases.
+
+3. Safe iPhone Updating (Avoiding Bricks)
+• The Root Causes of Bricking: Devices generally freeze or "brick" during an operating system update due to unexpected battery drainage, sudden Wi-Fi disconnection mid-install, or insufficient internal storage space to safely unpack the files.
+
+• Risk Mitigation Strategy:
+
+  • Computer-Based Updates: Connect the iPhone directly to a laptop via USB and update through official desktop software. A wired connection avoids Wi-Fi instability, and the computer validates the update file before applying it.
+
+  • Storage Headroom: Ensure at least 10 GB to 15 GB of storage space is clear on the iPhone before attempting an update to prevent system choking.
+
+  • Local Backups: Computer-based updates automatically generate a full local mirror of the device data, allowing for an immediate restore to previous conditions if an error occurs.
+
+
 <h3 id="protein">....Protein 070620261138.</h3>
 whey protein powder is produced as a by-product of cheese manufacture. The more expensive isolate is produced by an adiditonal filtration process to remove lactose and fat. However it is suggested it only removes approx 10 calories and alters the calorie to protein ration by about 2-3g of protein. Other than that is basically identical! The rest of the cost appears to be marketing and taste? On the basis that i take it in semi milk there is no sense it paying for an isolate and if i am bothered by the slight reduction in protein per serving then I can overfill the serving spoon. 
 <br>
