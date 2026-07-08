@@ -53,16 +53,18 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
-<h3 id="RAM">RAM</h3>
+<h3 id="RAM">....RAM 080720261344.</h3>
 
-Edge and Chrome use a tonne of RAM - laptop has one free slot and has 8gb RAM in the other which is 3200 MT/s SODIMM and reserves 623 MB. Didn't realise double clicking creating a handy little real time performance dash. 
+Edge and Chrome use a tonne of RAM - laptop has one free slot and has 8gb RAM in the other which is 3200 MT/s SODIMM and reserves 623 MB. Didn't realise double clicking creating a handy little real time performance dash. Moving data from RAM to SSD is called page filling and is the attempt to preserve some working desk space. Not really interested in the alternatives for web browsing as they all came with negatives. Easiest rule of thumb is to close any and all tabs that aren't essential. Priced 16Gb (to make up the 24gb) and came in at £108 - which is a lot more than the last time I bought RAM . I assume due to chip demand from Ai?<br>
+Task Manager :to monitor your system and spot rogue malware behavior: disk respomse time was approx 1-2ms which is healthy - spikes to >200ms may indicate an issue. Is a virus leaking data back out? 100% cpu drops to 10% on opening task manager? Could be a virus. Random names with high resource percentages. <br>
+
 <br>
 <img src="laptop_performance_dash.png" alt="performance dashboard on windows" style ="width: 40%; margin-top: 20px; aspect-ratio: auto;">
 <br>
 original research<br>
 
-1. Analysis of Your Laptop's System Performance
-The RAM Bottleneck: We initially looked at a Windows Task Manager screenshot showing your CPU running smoothly at 8–10%, but your Memory (RAM) maxed out at 92%. This revealed a textbook hardware bottleneck: your processor had plenty of speed to spare, but it was visually choked by a lack of physical workspace.
+1. Analysis of Laptop's System Performance
+The RAM Bottleneck:  Windows Task Manager screenshot showing your CPU running smoothly at 8–10%, but your Memory (RAM) maxed out at 92%. This revealed a textbook hardware bottleneck: processor had plenty of speed to spare, but it was visually choked by a lack of physical workspace.
 The Symptoms (Page Filing): When RAM fills up past 90%, Windows is forced to employ a trick called Virtual Memory or Page Filing, actively moving inactive app data off the fast RAM chips and onto your much slower hard drive/SSD. This explains why apps like Microsoft Edge or Teams stutter when you switch back to them, even if your CPU usage remains low.
 The Culprits: Your primary memory consumers were browser processes (Microsoft Edge taking up over 1.1 GB across 22 processes) and communication platforms (Microsoft Teams running over 540 MB).
 2. Browser Alternatives (From a RAM Perspective)
