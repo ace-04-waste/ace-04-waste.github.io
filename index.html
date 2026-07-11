@@ -53,142 +53,38 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
-<h3 id="RAM">....RAM 080720261344.</h3>
-
-Edge and Chrome use a tonne of RAM - laptop has one free slot and has 8gb RAM in the other which is 3200 MT/s SODIMM and reserves 623 MB. Didn't realise double clicking creating a handy little real time performance dash. Moving data from RAM to SSD is called page filling and is the attempt to preserve some working desk space. Not really interested in the alternatives for web browsing as they all came with negatives. Easiest rule of thumb is to close any and all tabs that aren't essential. Priced 16Gb (to make up the 24gb) and came in at £108 - which is a lot more than the last time I bought RAM . I assume due to chip demand from Ai?<br>
-Task Manager :to monitor your system and spot rogue malware behavior: disk respomse time was approx 1-2ms which is healthy - spikes to >200ms may indicate an issue. Is a virus leaking data back out? 100% cpu drops to 10% on opening task manager? Could be a virus. Random names with high resource percentages. <br>
-
-<br>
-<img src="laptop_performance_dash.png" alt="performance dashboard on windows" style ="width: 30%; margin-top: 20px; aspect-ratio: auto;">
-<br>
-<img src="RAM.png" alt="ram cost" style ="width: 30%; margin-top: 20px; aspect-ratio: auto;">
-<br>
-original research<br>
-
-1. Analysis of Laptop's System Performance
-The RAM Bottleneck:  Windows Task Manager screenshot showing your CPU running smoothly at 8–10%, but your Memory (RAM) maxed out at 92%. This revealed a textbook hardware bottleneck: processor had plenty of speed to spare, but it was visually choked by a lack of physical workspace.
-The Symptoms (Page Filing): When RAM fills up past 90%, Windows is forced to employ a trick called Virtual Memory or Page Filing, actively moving inactive app data off the fast RAM chips and onto your much slower hard drive/SSD. This explains why apps like Microsoft Edge or Teams stutter when you switch back to them, even if your CPU usage remains low.
-The Culprits: Your primary memory consumers were browser processes (Microsoft Edge taking up over 1.1 GB across 22 processes) and communication platforms (Microsoft Teams running over 540 MB).
-2. Browser Alternatives (From a RAM Perspective)
-While Microsoft Edge features excellent "Sleeping Tabs" optimizations, you asked about more efficient alternatives. We broke down the options by how they treat memory:
-Brave: Excellent for naturally lowering RAM usage because its built-in ad and tracker blocker strips away resource-heavy background scripts before websites even load.
-Mozilla Firefox: Ideal if you are a "tab hoarder" who keeps 20+ tabs open. Unlike Chromium-based browsers (Edge/Chrome) which launch a new process for almost every individual tab, Firefox caps its content processes to prevent linear memory spikes.
-Opera GX: Best for manual enforcement. It includes a built-in RAM Limiter widget that allows you to set a strict ceiling (e.g., maximum 2 GB) on how much memory the browser can consume.
-3. Hardware Upgrades & Cost
-Your second Task Manager screenshot gave us the exact hardware specifications of your Dell laptop: DDR4 SODIMM RAM running at 3200 MT/s, with 1 out of 2 slots used. This means you currently have one 8GB stick installed and an entirely empty slot ready for a quick upgrade:
-Option A (24GB Total): You can purchase a single 16GB DDR4 3200MHz SODIMM laptop stick (approx. £30–£45) and pop it straight into the empty slot. This is the cheapest way to completely eliminate your 92% lag threshold.
-Option B (32GB Total): You can buy a matched 32GB kit consisting of two 16GB sticks (approx. £70–£95), removing your current 8GB stick entirely to run them together in dual-channel configuration.
-Difficulty: This is rated a 2/10 on the difficulty scale. It requires unscrewing the bottom panel of your laptop, angling the stick into the slot, and clicking it down into its side brackets.
-4. Real-Time Tracking & Virus Detection
-We discussed how to use Task Manager to monitor your system and spot rogue malware behavior:
-What to watch: Keep an eye on Disk Response Time (healthy is under 20ms; spikes to 500ms+ indicate a choking drive) and idle Network Throughput (sustained background uploads when you aren't doing anything can mean a virus is leaking data).
-Virus Clues: Watch out for the "Whack-a-Mole" effect where 100% CPU usage drops instantly to 10% the moment you open Task Manager (malware hiding itself), or unrecognized, high-resource processes with random names. Adding the Command Line column in Task Manager allows you to see if innocent-looking files are executing from hidden temporary folders instead of proper system directories.
-5. Smart Software Maintenance
-Windows Updates: We established that you should not check for updates daily, as the background scans waste valuable RAM and CPU power. Instead, you should rely on Windows' automatic background cycle or check manually just once a month. To minimize disruption, we configured your Active Hours to block updates during work, and turned off the "Get latest updates as soon as they are available" feature to ensure you only download stable monthly releases.
-Safe iPhone SE Updating: Because a past update left your device "bricked," you have safely held your iPhone SE on iOS 16.2. We reviewed how to break out of this loop safely if you ever want to optimize your battery life or patch security vulnerabilities:
-Update via Computer: Plug the iPhone directly into your Dell laptop via USB to avoid Wi-Fi drops, letting the computer handle file integration.
-Storage Headroom: Ensure 10 GB to 15 GB of storage space is free on the phone before hitting install so it has room to unpack.
-The Safety Net: Computer updates automatically create an immutable local backup of your photos and data first, allowing you to completely restore your device if a freeze ever occurs.
-
-1. Computer Performance & RAM Management
-• The RAM Bottleneck: A system can experience high RAM usage (e.g., 90%+) even when the CPU is running comfortably at a low percentage (e.g., 10%). This indicates a memory capacity bottleneck rather than a lack of processing power.
-
-• Page Filing Impact: When physical RAM is near capacity, Windows utilizes "Virtual Memory" (Page Filing) to shift background tasks to the hard drive or SSD. This process causes noticeable system stuttering and application lag while the CPU waits for data retrieval.
-
-• Browser Mitigation: Browsers heavily impact RAM. To reduce memory load, users should enable features like Memory Saver or Efficiency Mode to freeze inactive background tabs, or switch to more resource-efficient browsers like Brave or Firefox (which caps content processes for high tab counts).
-
-• Hardware Upgrades: Upgrading laptop memory (RAM) is a straightforward process, especially if an empty SODIMM slot is available. For systems utilizing DDR4 3200MHz RAM, users can cost-effectively add a single 16GB stick (approx. £30-£45) to combine with existing memory or install a full 32GB kit (approx. £70-£95).
-
-2. Windows Updates Scheduling
-• Avoid Daily Updates: Manually checking for or installing updates daily introduces unnecessary background processing lag and is counterproductive.
-
-• Optimal Approach: Rely on Windows' automated background processes, which silently handle stability patches and antivirus definitions during idle periods.
-
-• User Controls: Configure Active Hours to prevent sudden forced restarts during core working windows, and disable the "Get the latest updates as soon as they're available" toggle to ensure the system only receives stable, fully vetted monthly releases.
-
-3. Safe iPhone Updating (Avoiding Bricks)
-• The Root Causes of Bricking: Devices generally freeze or "brick" during an operating system update due to unexpected battery drainage, sudden Wi-Fi disconnection mid-install, or insufficient internal storage space to safely unpack the files.
-
-• Risk Mitigation Strategy:
-
-  • Computer-Based Updates: Connect the iPhone directly to a laptop via USB and update through official desktop software. A wired connection avoids Wi-Fi instability, and the computer validates the update file before applying it.
-
-  • Storage Headroom: Ensure at least 10 GB to 15 GB of storage space is clear on the iPhone before attempting an update to prevent system choking.
-
-  • Local Backups: Computer-based updates automatically generate a full local mirror of the device data, allowing for an immediate restore to previous conditions if an error occurs.
-
-
-<h3 id="protein">....Protein 070620261138.</h3>
-whey protein powder is produced as a by-product of cheese manufacture. The more expensive isolate is produced by an adiditonal filtration process to remove lactose and fat. However it is suggested it only removes approx 10 calories and alters the calorie to protein ration by about 2-3g of protein. Other than that is basically identical! The rest of the cost appears to be marketing and taste? On the basis that i take it in semi milk there is no sense it paying for an isolate and if i am bothered by the slight reduction in protein per serving then I can overfill the serving spoon. 
-<br>
-<img src="PROTEIN.jpg" alt="isolate protein powder" style ="width: 40%; margin-top: 20px; aspect-ratio: auto;">
+<h3 id="file_formatting">....File formatting 110720261005.</h3>
+<p>
+    make sure when filing on an iphone it is set to "most compatible" so that it records in H.264 rather than HEVC . Otherwise it will need converting to MP4 or MPEG4 to play on a Sony TV . Understand that the file format system for the usb pen drive will most likely be FAT32 or EXFAT32 and will need to be EXFAT32 for anything over 4BG file size which most modern 4k films will be. There is an extensive archive and content that has no copyright on at Archive.org and i DLd Dracula for this lab. The original screen format is box due to the 1931 production and needed remote>tools(row 8)>screen size to configure. 
 <br>
 original research
-<br>
-Protein Powder Breakdown & Cost Savings
-Summary of protein powder comparison based on current tub (Optimum Nutrition Gold Standard 100% Whey):
+Here is a detailed summary of our entire conversation, tracking how you went from a project idea to playing a classic film on your TV today.
+## 1. The Original Idea: The Mini Media Server
+You started with an idea to build a super small, slim, low-power media server on your shelf running free software to play your own locally held films and programs.
+ * **The Blueprint:** We discussed using a budget **Intel N100 Mini PC** (which costs around £130–£150, uses only 6 watts of power, and smoothly processes 4K video streams) paired with an external hard drive for storage.
+ * **The Software:** The recommended setup was a free Linux base (**Ubuntu Server**) running **Jellyfin** (a 100% free, open-source media manager that looks like Netflix).
+## 2. The Phone Streaming Attempt & Troubleshooting
+When you mentioned wanting to play your own short movies, we pivoted to seeing if you could stream them directly from your iPhone to your home TV for free without building a server yet. We hit a few roadblocks, which we solved step-by-step:
+ * **Roadblock 1 (Mobile Data):** Your first attempt failed because your iPhone was connected to **giffgaff 4G** instead of your home Wi-Fi. We fixed this by turning on your phone's Wi-Fi.
+ * **Roadblock 2 (Device Incompatibility):** Even on Wi-Fi, your phone couldn't find the TV. Your photos revealed you were trying to beam the signal to a **NOW TV box** (which uses Roku software) connected to a **Sony TV (Model KDL-43WF663)**.
+ * **The Culprit:** Neither the NOW TV box nor that specific Sony model supports Apple AirPlay natively. Third-party casting apps on the App Store tried to charge you money or trick you into a subscription, which you rightly rejected.
+## 3. The Practical Solution: The USB Stick Route
+To bypass Apple and Sony's compatibility locks completely for free, we turned to the physical USB ports on your TV.
+ * **Checking the USB Stick:** You checked your **HP v135w (E:)** drive properties on your Windows PC. It was formatted to **FAT32**—which is perfectly readable by your Sony TV.
+ * **Managing the Storage:** The stick was an 8GB drive with only **1.43 GB of free space** left. We discussed the **4GB file limit** rule of FAT32 (meaning no single movie file can be larger than 4GB) and noted that 1.43 GB was tight but enough for a test.
+## 4. Success with *Dracula* (1931)
+You went onto **Archive.org** (a massive, legal public domain digital library) and found the classic movie *Dracula* (1931) starring Bela Lugosi.
+ * The file was **609.7 MB**, making it small enough to fit perfectly into your remaining 1.43 GB of space without hitting the 4GB FAT32 limit.
+ * You downloaded it as an **MP4 / H.264** file, transferred it to your HP stick, plugged it into the Sony TV's USB port, and opened the TV's native **Media Player** app to watch it.
+## 5. Technical Knowledge: File Systems & Formatting
+Finally, we covered how USB sticks actually organize data behind the scenes:
+ * **The Three Main Formats:**
+   * **FAT32:** Universally compatible with almost all devices, but capped at a maximum single-file size of 4GB. Usually found on new sticks 32GB or smaller.
+   * **exFAT:** The modern standard for flash drives. It removes the 4GB limit, holds massive files, and works perfectly on Windows, Mac, and modern Smart TVs. Usually comes pre-formatted on new sticks 64GB or larger.
+   * **NTFS:** Windows' default internal system. It is great for PCs, but Macs can't write to it, and many Smart TVs flat-out refuse to read it.
+ * **How to Format on Windows:** If you ever need to wipe a stick and change its format (e.g., changing a new stick to exFAT to hold a huge movie file), you right-click the drive in Windows File Explorer, select **Format**, choose your file system, and click **Start** (which erases the drive clean).
 
-Pricing & Alternatives
-• Current Tub: Asda price is £36.74 for a 900g tub (Vanilla, 30 servings).
-
-• Cheaper Alternatives: Myprotein Impact Whey or Bulk Pure Whey cost around £25 for 1kg (approx. 33 servings), saving over £11 while offering more powder.
-
-What is Isolate vs. Concentrate?
-• Isolate (Current Tub): Extra-filtered to remove almost all fat, carbs, and lactose. It digests very quickly and is 90%+ pure protein.
-
-• Concentrate (Budget Option): Standard filtration, leaving a tiny bit of natural dairy fats and carbs (70-80% pure protein).
-
-Is Isolate Worth the Money?
-• No, especially when mixed with milk. Gram-for-gram, both build the same amount of muscle.
-
-• A pint of semi-skimmed milk adds ~260 calories. Mixing Isolate + Milk (370 kcal) vs. Concentrate + Milk (380 kcal) results in a negligible 10-calorie difference.
-
-• Conclusion: Unless standard whey causes stomach bloating/lactose issues, switch to a cheaper concentrate brand to save money.
-
-While Asda’s own-brand whey will build the exact same amount of muscle as a big-name brand, there *are* a few noticeable differences when you step down from a premium name like Optimum Nutrition (or dedicated fitness brands like Myprotein and Bulk) to a budget supermarket own-brand.
-Here is what you’ll actually notice:
-### 1. The "Texture" and Mixability
- * **The Difference:** Premium powders are heavily instantised (usually using a tiny bit of soy or sunflower lecithin) to make them dissolve effortlessly. Supermarket budget brands tend to be a bit more stubborn.
- * **The Reality:** It might require a bit of extra shaking to break up tiny floury clumps, or it might leave a slightly "thicker" or grainier mouthfeel. Since you are mixing it with a pint of milk, this is less noticeable than if you were using water, but a shaker with a good wire blending ball is highly recommended.
-### 2. Flavour Depth
- * **The Difference:** Optimum Nutrition spends massive amounts of money on flavoring science to make their "Vanilla Ice Cream" or "Double Rich Chocolate" taste like actual milkshakes. Asda's "Rich Chocolate" or "Rich Strawberry" will taste much more basic and sweeter—think budget school-cafeteria milkshake rather than a luxury dessert.
- * **The Reality:** It’s completely drinkable, but it is definitely a "chug it down" experience rather than something you sip and savour.
-### 3. Protein Purity Per Scoop
- * **The Difference:** If you look at the percentage of protein by weight, your Gold Standard is ~80% protein. Dedicated budget brands like Myprotein Impact Whey sit around 75-77%. Asda's own brand sits a little lower, closer to **70% protein by weight**.
- * **The Reality:** To get the exact same 24g of protein you get from your current tub, you just have to use a slightly larger scoop (or about a scoop and a quarter) of the Asda powder. Because it's so cheap, you are still saving massive amounts of money even if you use a bit more powder per shake.
-### 4. Fillers and Thickening Agents
- * **The Difference:** To keep the price at £7, supermarket brands sometimes use slightly more thickening agents (like Xanthan gum) and cheaper artificial sweeteners to mask the raw dairy taste.
- * **The Reality:** If you have a rock-solid stomach, you won’t notice a thing. If you are highly sensitive to sweeteners, it might feel a little heavier on your digestion than your premium tub.
-### Summary
-If you just want to hit your protein goals without breaking the bank, **Asda’s own-brand is an absolute bargain.** Just be prepared for it to be a little sweeter, slightly thicker, and require an extra 10 seconds of aggressive shaking!
-
-<H3 ID="hydration">....Hydration for humans 060720261112.</H3>
-Water blindly follows salts through the small intestine. It follows at a rate of approx 250ml every 20 mins. It follows because of the principle
-of Osmosis. Nature abhors a lack of balance and the water equalises the salt concentrated blood plasma which approx ideally 90:1. So drink at a rate that allows absorption otherwise chugging creates urine which is the systems balancing act via the kidneys. If you dont have enough hydration in blood plasma the brain creates the hormone Vasopressin. Signals kidneys to pull water and preserve  which is why piss goes darker brown. When the equilibrium is established the Vasopressin levels drop and the kidneys release water. wow! clear piss again. electrolytes do as suggested , they support electrical signalling in the body : the body is a giant electrical signalling process. Low electrolytes scramble this signalling . Is this what brain fog is? electrical disruption? Caffeine only really an issue over 300mg a day. The water in the coffee contributes to the water volume. 
-<br>
-<img src="WATERBOTTLE.png" alt="personal hydration system aka water bottle graduated" style ="width: 40%; margin-top: 20px; aspect-ratio: auto;"><br>
-
-<br>
-Original research notes.<br>
- Daily Targets & Pacing
-Personal Baseline: 2.5 to 3 liters of total fluid daily (approx. 10–12 standard 250ml glasses).
-
-The Bottle Protocol: Your 1-liter bottle should be filled twice a day (once for the 8 AM–1 PM morning session, and once for the 2 PM–7 PM afternoon session).
-
-The Speed Limit: The small intestine can only absorb 200ml–250ml of water every 15–20 minutes via osmosis (water following salt across cell membranes). Avoid chugging to catch up; excess water just gets rapidly flushed by the kidneys.
-
-Cellular Mechanics
-Vasopressin: The brain's water-saving hormone. When dehydrated, it signals the kidneys to pull water back into the blood, leaving urine highly concentrated and dark due to the pigment urobilin. When hydrated, vasopressin drops, and the kidneys freely expel clear urine.
-
-Electrolytes: Minerals (sodium, potassium, etc.) that conduct the body's electrical currents. Dehydration scrambles these signals, causing muscle cramps.
-
-Digestion & Wet Stools: The large intestine normally recycles the final 1-2 liters of water from digestion. Watery stools mean the gut moved too fast to absorb it, or an undigested substance pulled water into the bowel.
-
-Fluid Modifiers
-Caffeine: A mild diuretic, but the fluid in a cup of tea or coffee outweighs the loss. It counts toward your daily total.
-
-Alcohol: A strong diuretic that suppresses Vasopressin, forcing kidneys to expel up to 4x the liquid consumed. Use the 1-for-1 water spacer rule.
-
+</p>
 
 <h3 id="jupyter">....Launch Jupyter 010720261310</h3>
 <p>
