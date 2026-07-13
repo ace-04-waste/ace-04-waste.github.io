@@ -53,6 +53,110 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
+<h3 id="weather">....Weather 130720260932.</h3>
+<p>
+    <img src="longitude.jpg" alt="decimal co-ordinates" style ="width: 40%; margin-top: 20px; aspect-ratio: 4/3;"><br>
+    <br>
+    original research
+    Decoding Global Coordinates (DMS Format)
+Geographic coordinates written in DMS (Degrees, Minutes, Seconds) format function as a high-precision global address by breaking down grid lines into units of time.
+
+ Latitude: 40° 42' 46" N
+Indicates the precise position North or South of the Equator (horizontal grid lines).
+
+• 40° (Degrees): Represents 40 major grid lines north of the Equator. One degree spans approximately 69 miles.
+
+• 42' (Minutes): Each degree is divided into 60 smaller segments called minutes. This indicates 42 segments past the 40th parallel.
+
+• 46" (Seconds): Each minute is further divided into 60 smaller units called seconds. This represents 46 steps past minute 42, narrowing accuracy down to a few meters (roughly a car length).
+
+• N (North): Confirms placement in the Northern Hemisphere.
+
+Longitude: 74° 00' 21" W
+Indicates the precise position East or West of the Prime Meridian in Greenwich, England (vertical grid lines).
+
+• 74° (Degrees): Represents 74 major vertical lines west of the Prime Meridian.
+
+• 00' (Minutes): Indicates a position resting directly on the main 74-degree line with no additional minute increments.
+
+• 21" (Seconds): Represents 21 precise tracking units past the 74-degree line.
+
+• W (West): Confirms placement in the Western Hemisphere.
+
+ Geographic Example
+The specific coordinate combination of 40° 42' 46" N, 74° 00' 21" W pinpoints the main entrance of the New York Public Library in Manhattan, New York City.
+Transition from DMS to Decimal Degrees (DD)
+In modern computing, Decimal Degrees (DD) have largely replaced the traditional Degrees, Minutes, Seconds (DMS) format. While aviation and maritime navigation still utilize DMS, GPS systems, databases, and weather APIs rely almost exclusively on DD due to its computing efficiency.
+
+Comparison Example (Warrington, UK)
+• Decimal Degrees (DD): `53.3591831, -2.5054001`
+
+• Degrees, Minutes, Seconds (DMS): `53° 21' 33.1" N, 2° 30' 19.4" W`
+
+Key Reasons for Software Adoption
+1. Simplified Parsing for Code
+
+Processing traditional symbols (`°`, `'`, `"`) requires string manipulation, which slows down execution. Decimal degrees represent locations as standard floating-point numbers that software can process instantly.
+
+2. Directional Mapping via Signs
+
+Instead of using cardinal direction letters (N, S, E, W), Decimal Degrees utilize positive and negative signs to define hemispheres:
+
+• North & East: Represented by positive numbers ($+$).
+
+• South & West: Represented by negative numbers ($-$).
+
+3. Scalable Digital Precision
+
+Traditional DMS requires adding decimals to seconds to achieve sub-meter precision. Decimal Degrees handle precision strictly through the number of trailing decimal places:
+
+• 4 decimal places: Accurate to roughly 11 meters.
+
+• 7 decimal places: Accurate to approximately 1 centimeter, allowing commercial GPS hardware to map highly granular positions.
+Building a DIY Weather Station
+A homebrew weather station combines hardware sensors, a micro-computer, protective physical housing, and local programming.
+
+1. Hardware Sensor Components
+• Micro-computer: A Raspberry Pi or Arduino serves as the processing core.
+
+• Environmental Sensors: Common chips like the BME280 measure temperature, humidity, and atmospheric pressure.
+
+• Mechanical Sensors: Anemometers calculate wind speed, and tipping-bucket assemblies measure rainfall volume.
+
+2. Physical Housing (Stevenson Screen)
+Sensors require protection from direct sunlight and rain while remaining exposed to ambient air.
+
+• Design: Built by stacking white plastic bowls or saucers upside down with uniform spacers.
+
+• Function: The gaps allow continuous airflow for accurate ambient measurements, while the white material reflects radiant solar heat.
+
+3. Data Collection Software
+A local script handles data ingestion from the hardware pins.
+
+• Operation: Reads sensor voltages, converts values to standard units, and logs data to a local file (e.g., `backyard_weather.log`).
+
+• Integration: The logged files can be queried by local command-line applications to display hyper-local backyard metrics alongside public API data.
+
+
+Weather forecasting is a complex scientific process that relies on data collection, physics-based computer models, and human meteorologists. The entire operation can be broken down into three main phases: observation, simulation, and communication.
+## 1. Global Observation (Collecting the Data)
+Before computers can predict the future weather, they must know exactly what the atmosphere is doing right now. Data is continuously gathered from around the planet using several methods:
+ * **Surface Weather Stations:** Thousands of automated stations on land and buoys at sea measure temperature, pressure, humidity, wind speed, and precipitation.
+ * **Weather Balloons (Radiosondes):** Launched twice a day from nearly 900 locations globally, these balloons climb up to 100,000 feet into the atmosphere, measuring vertical profiles of pressure, temperature, and moisture.
+ * **Weather Satellites:** Geostationary and polar-orbiting satellites track cloud coverage, ocean temperatures, and water vapor from space.
+ * **Doppler Radar:** Ground-based radar networks track the movement, intensity, and type of precipitation (rain, snow, or hail) in real time.
+## 2. Numerical Weather Prediction (The Simulation)
+Once the raw data is collected, it goes through a process called **Data Assimilation**. Because observations cannot cover every single square inch of the planet, supercomputers use mathematical models to fill in the gaps and create a perfectly uniform snapshot of the global atmosphere.
+This snapshot is plugged into **Numerical Weather Prediction (NWP)** models. These are massive computer programs containing complex fluid dynamics and thermodynamic equations.
+ * **The Grid System:** The supercomputer divides the atmosphere into a massive 3D grid of boxes, wrapping around the globe and stacking many layers high into space.
+ * **Solving Equations:** The computer calculates how air, heat, and moisture will move from one grid box to its neighboring boxes over time, using fundamental laws of physics.
+ * **Ensemble Forecasting:** Because small errors in initial data can cause completely different outcomes days later (the Butterfly Effect), supercomputers run the same model dozens of times with slightly altered starting data. If 45 out of 50 runs show rain on Thursday, meteorologists can confidently forecast a 90% chance of rain.
+## 3. Human Interpretation and Communication
+Computers generate the raw numbers, but raw model data can conflict or contain systemic biases.
+Professional meteorologists review multiple global models (such as the American **GFS** or the European **ECMWF**). They use their localized knowledge of geography—such as how a specific mountain range or coastline alters wind patterns—to tweak the results, finalize the forecast, and distribute clear warnings to the public.
+
+</p>
+
 <h3 id="file_formatting">....File formatting 110720261005.</h3>
 <p>
     make sure when filing on an iphone it is set to "most compatible" so that it records in H.264 rather than HEVC . Otherwise it will need converting to MP4 or MPEG4 to play on a Sony TV . Understand that the file format system for the usb pen drive will most likely be FAT32 or EXFAT32 and will need to be EXFAT32 for anything over 4BG file size which most modern 4k films will be. There is an extensive archive and content that has no copyright on at Archive.org and i DLd Dracula for this lab. The original screen format is box due to the 1931 production and needed remote>tools(row 8)>screen size to configure. 
