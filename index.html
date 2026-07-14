@@ -230,6 +230,36 @@ Professional meteorologists review multiple global models (such as the American 
 <p>
     make sure when filing on an iphone it is set to "most compatible" so that it records in H.264 rather than HEVC . Otherwise it will need converting to MP4 or MPEG4 to play on a Sony TV . Understand that the file format system for the usb pen drive will most likely be FAT32 or EXFAT32 and will need to be EXFAT32 for anything over 4BG file size which most modern 4k films will be. There is an extensive archive and content that has no copyright on at Archive.org and i DLd Dracula for this lab. The original screen format is box due to the 1931 production and needed remote>tools(row 8)>screen size to configure. 
 <br>
+
+<img src="dracula.jpg" alt="file properties for dracula mpeg4" style ="width: 40%; margin-top: 20px; aspect-ratio: 4/3;"><br>
+original research
+Here is a detailed summary of our entire conversation, tracking how you went from a project idea to playing a classic film on your TV today.
+## 1. The Original Idea: The Mini Media Server
+You started with an idea to build a super small, slim, low-power media server on your shelf running free software to play your own locally held films and programs.
+ * **The Blueprint:** We discussed using a budget **Intel N100 Mini PC** (which costs around £130–£150, uses only 6 watts of power, and smoothly processes 4K video streams) paired with an external hard drive for storage.
+ * **The Software:** The recommended setup was a free Linux base (**Ubuntu Server**) running **Jellyfin** (a 100% free, open-source media manager that looks like Netflix).
+## 2. The Phone Streaming Attempt & Troubleshooting
+When you mentioned wanting to play your own short movies, we pivoted to seeing if you could stream them directly from your iPhone to your home TV for free without building a server yet. We hit a few roadblocks, which we solved step-by-step:
+ * **Roadblock 1 (Mobile Data):** Your first attempt failed because your iPhone was connected to **giffgaff 4G** instead of your home Wi-Fi. We fixed this by turning on your phone's Wi-Fi.
+ * **Roadblock 2 (Device Incompatibility):** Even on Wi-Fi, your phone couldn't find the TV. Your photos revealed you were trying to beam the signal to a **NOW TV box** (which uses Roku software) connected to a **Sony TV (Model KDL-43WF663)**.
+ * **The Culprit:** Neither the NOW TV box nor that specific Sony model supports Apple AirPlay natively. Third-party casting apps on the App Store tried to charge you money or trick you into a subscription, which you rightly rejected.
+## 3. The Practical Solution: The USB Stick Route
+To bypass Apple and Sony's compatibility locks completely for free, we turned to the physical USB ports on your TV.
+ * **Checking the USB Stick:** You checked your **HP v135w (E:)** drive properties on your Windows PC. It was formatted to **FAT32**—which is perfectly readable by your Sony TV.
+ * **Managing the Storage:** The stick was an 8GB drive with only **1.43 GB of free space** left. We discussed the **4GB file limit** rule of FAT32 (meaning no single movie file can be larger than 4GB) and noted that 1.43 GB was tight but enough for a test.
+## 4. Success with *Dracula* (1931)
+You went onto **Archive.org** (a massive, legal public domain digital library) and found the classic movie *Dracula* (1931) starring Bela Lugosi.
+ * The file was **609.7 MB**, making it small enough to fit perfectly into your remaining 1.43 GB of space without hitting the 4GB FAT32 limit.
+ * You downloaded it as an **MP4 / H.264** file, transferred it to your HP stick, plugged it into the Sony TV's USB port, and opened the TV's native **Media Player** app to watch it.
+## 5. Technical Knowledge: File Systems & Formatting
+Finally, we covered how USB sticks actually organize data behind the scenes:
+ * **The Three Main Formats:**
+   * **FAT32:** Universally compatible with almost all devices, but capped at a maximum single-file size of 4GB. Usually found on new sticks 32GB or smaller.
+   * **exFAT:** The modern standard for flash drives. It removes the 4GB limit, holds massive files, and works perfectly on Windows, Mac, and modern Smart TVs. Usually comes pre-formatted on new sticks 64GB or larger.
+   * **NTFS:** Windows' default internal system. It is great for PCs, but Macs can't write to it, and many Smart TVs flat-out refuse to read it.
+ * **How to Format on Windows:** If you ever need to wipe a stick and change its format (e.g., changing a new stick to exFAT to hold a huge movie file), you right-click the drive in Windows File Explorer, select **Format**, choose your file system, and click **Start** (which erases the drive clean).
+
+</p>
 <h3>....update 140720261236.</h3>
 <p>
     **H.264** (also known as **AVC**, or Advanced Video Coding) is essentially the universal language of digital video.
@@ -265,35 +295,6 @@ Instead, it uses **vector tracking**. It recognizes the block of pixels that mak
 
 </p>
 <br>
-<img src="dracula.jpg" alt="file properties for dracula mpeg4" style ="width: 40%; margin-top: 20px; aspect-ratio: 4/3;"><br>
-original research
-Here is a detailed summary of our entire conversation, tracking how you went from a project idea to playing a classic film on your TV today.
-## 1. The Original Idea: The Mini Media Server
-You started with an idea to build a super small, slim, low-power media server on your shelf running free software to play your own locally held films and programs.
- * **The Blueprint:** We discussed using a budget **Intel N100 Mini PC** (which costs around £130–£150, uses only 6 watts of power, and smoothly processes 4K video streams) paired with an external hard drive for storage.
- * **The Software:** The recommended setup was a free Linux base (**Ubuntu Server**) running **Jellyfin** (a 100% free, open-source media manager that looks like Netflix).
-## 2. The Phone Streaming Attempt & Troubleshooting
-When you mentioned wanting to play your own short movies, we pivoted to seeing if you could stream them directly from your iPhone to your home TV for free without building a server yet. We hit a few roadblocks, which we solved step-by-step:
- * **Roadblock 1 (Mobile Data):** Your first attempt failed because your iPhone was connected to **giffgaff 4G** instead of your home Wi-Fi. We fixed this by turning on your phone's Wi-Fi.
- * **Roadblock 2 (Device Incompatibility):** Even on Wi-Fi, your phone couldn't find the TV. Your photos revealed you were trying to beam the signal to a **NOW TV box** (which uses Roku software) connected to a **Sony TV (Model KDL-43WF663)**.
- * **The Culprit:** Neither the NOW TV box nor that specific Sony model supports Apple AirPlay natively. Third-party casting apps on the App Store tried to charge you money or trick you into a subscription, which you rightly rejected.
-## 3. The Practical Solution: The USB Stick Route
-To bypass Apple and Sony's compatibility locks completely for free, we turned to the physical USB ports on your TV.
- * **Checking the USB Stick:** You checked your **HP v135w (E:)** drive properties on your Windows PC. It was formatted to **FAT32**—which is perfectly readable by your Sony TV.
- * **Managing the Storage:** The stick was an 8GB drive with only **1.43 GB of free space** left. We discussed the **4GB file limit** rule of FAT32 (meaning no single movie file can be larger than 4GB) and noted that 1.43 GB was tight but enough for a test.
-## 4. Success with *Dracula* (1931)
-You went onto **Archive.org** (a massive, legal public domain digital library) and found the classic movie *Dracula* (1931) starring Bela Lugosi.
- * The file was **609.7 MB**, making it small enough to fit perfectly into your remaining 1.43 GB of space without hitting the 4GB FAT32 limit.
- * You downloaded it as an **MP4 / H.264** file, transferred it to your HP stick, plugged it into the Sony TV's USB port, and opened the TV's native **Media Player** app to watch it.
-## 5. Technical Knowledge: File Systems & Formatting
-Finally, we covered how USB sticks actually organize data behind the scenes:
- * **The Three Main Formats:**
-   * **FAT32:** Universally compatible with almost all devices, but capped at a maximum single-file size of 4GB. Usually found on new sticks 32GB or smaller.
-   * **exFAT:** The modern standard for flash drives. It removes the 4GB limit, holds massive files, and works perfectly on Windows, Mac, and modern Smart TVs. Usually comes pre-formatted on new sticks 64GB or larger.
-   * **NTFS:** Windows' default internal system. It is great for PCs, but Macs can't write to it, and many Smart TVs flat-out refuse to read it.
- * **How to Format on Windows:** If you ever need to wipe a stick and change its format (e.g., changing a new stick to exFAT to hold a huge movie file), you right-click the drive in Windows File Explorer, select **Format**, choose your file system, and click **Start** (which erases the drive clean).
-
-</p>
 
 <h3 id="jupyter">....Launch Jupyter 010720261310</h3>
 <p>
