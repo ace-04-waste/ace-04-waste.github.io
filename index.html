@@ -230,6 +230,40 @@ Professional meteorologists review multiple global models (such as the American 
 <p>
     make sure when filing on an iphone it is set to "most compatible" so that it records in H.264 rather than HEVC . Otherwise it will need converting to MP4 or MPEG4 to play on a Sony TV . Understand that the file format system for the usb pen drive will most likely be FAT32 or EXFAT32 and will need to be EXFAT32 for anything over 4BG file size which most modern 4k films will be. There is an extensive archive and content that has no copyright on at Archive.org and i DLd Dracula for this lab. The original screen format is box due to the 1931 production and needed remote>tools(row 8)>screen size to configure. 
 <br>
+<h3>....update 140720261236.</h3>
+<p>
+    **H.264** (also known as **AVC**, or Advanced Video Coding) is essentially the universal language of digital video.
+It is a **video codec**—which is short for **co**mpressor/**dec**ompressor.
+Whenever you shoot a video on your phone, the raw file is massive. If your phone saved it without compressing it, a 10-second clip would fill up your storage. H.264 is the mathematical formula that shrinks that giant video file down into a tiny, manageable size without ruining how good it looks.
+### Codec vs. Container (The "Box" Analogy)
+To understand why your iPhone says "H.264" but the file ends in .mov or .mp4, it helps to use the **gift box analogy**:
+[Image explaining video codec and container concept]
+ * **The Codec (H.264):** This is the actual *content* of your gift (the video itself). It's the specific way the video data is folded and packed tightly so it fits in a small space.
+ * **The Container (.mp4 or .mov):** This is the *wrapping paper and box* you put the gift in.
+Because your iPhone compressed the video using the **H.264** codec, it doesn't really matter if the "box" is labeled .mov (Apple's favorite wrapping paper) or .mp4 (the world's favorite wrapping paper). The actual video inside is identical. That is why you can simply rename the file extension, and it still works!
+### Why is H.264 so famous?
+H.264 was released in 2003 and quickly became the absolute gold standard for the internet.
+ * **Universal Compatibility:** Literally everything plays it. Your smart TV, an old Windows XP computer, a PlayStation, a cheap tablet, and even smart refrigerators can decode H.264.
+ * **Great Efficiency:** It was the technology that made HD streaming on YouTube and Netflix possible back in the day, because it could stream high-quality video over standard internet connections.
+*Note: There is a newer version called **H.265 (HEVC)** which compresses files even smaller, but older TVs often can't play it—which is why changing your iPhone settings to "Most Compatible" (H.264) was the right move!*
+
+At its core, H.264 video compression works by exploiting a simple truth: **video is just a sequence of still images, and most of those images look almost identical to the ones right next to them.** If your phone recorded 30 individual, uncompressed photos every second, your storage would fill up in minutes. To prevent this, H.264 uses two main types of mathematical "trickery" to shrink the file size by up to 99% without your eyes noticing.
+## 1. Spatial Compression (Within a Single Frame)
+Also known as **Intra-frame compression**, this trick looks at a single picture frame and simplifies it, much like how a JPEG photo works.
+If you take a video of a person standing in front of a solid blue wall, H.264 doesn't save the color data for every single one of the millions of blue pixels. Instead, it divides the image into a grid of blocks (called **macroblocks**) and writes a shorthand note: *"This entire block of 16x16 pixels is this exact shade of blue."* ---
+## 2. Temporal Compression (Between Multiple Frames)
+This is where the real magic of H.264 happens. Also known as **Inter-frame compression**, this process looks at what changes *over time*.
+Imagine a video of a person talking in a room. The background wall, the couch, and the floor do not move at all. The only things moving are the person's mouth and eyes. H.264 realizes it is a waste of data to redraw the couch 30 times every second.
+To solve this, H.264 uses three types of frames:
+ * **I-Frames (Intra-coded Frames):** These are "keyframe" anchor points. They are fully detailed, complete images saved every couple of seconds.
+ * **P-Frames (Predicted Frames):** These frames do not contain a full picture. Instead, they look back at the previous I-Frame and **only** record what has changed (like a hand moving).
+ * **B-Frames (Bi-directional Predicted Frames):** These are the most compressed. They look both *backward* at previous frames and *forward* at upcoming frames to calculate and estimate movement, saving only the tiny mathematical differences.
+By using P and B frames, H.264 only has to save about 10% to 20% of the actual image data for the majority of your video.
+## 3. Motion Estimation (Tracking the Movement)
+When something moves across the screen (like a car driving by), H.264 doesn't delete the car and redraw it in a new position in the next frame.
+Instead, it uses **vector tracking**. It recognizes the block of pixels that makes up the car, and in the next frame, it simply writes a tiny mathematical instruction: *"Take that exact block of pixels from the last frame and shift it 5 pixels to the left."* Moving a block of existing pixels requires infinitely less data than drawing a brand-new car in every frame.
+
+</p>
 <br>
 <img src="dracula.jpg" alt="file properties for dracula mpeg4" style ="width: 40%; margin-top: 20px; aspect-ratio: 4/3;"><br>
 original research
