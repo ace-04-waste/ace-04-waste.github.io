@@ -58,110 +58,110 @@
 <img src="habit_tracker.png" alt="arial view of service station i walk around" style ="width: 40%; margin-top: 20px; height: auto; display: block;"><br>
 
 <p>
-    This was a bit of a pain to get around Apple Os security protocol of prevernting code being executed locally. Tried a few things and then used github to host and open in Safari. Neat solution. Idea was to prove concept that I can host my own applications locally offline. Started the office tracker - see image. 
+    This was a bit of a pain to get around Apple's Os security protocol of preventing code being executed locally. Tried a few things and then used github to host and open in Safari. Neat solution. Idea was to prove concept that I can host my own applications locally offline. Started the office tracker - see image. <br>
 
 Zero Network Dependency: The application operates entirely client-side. The HTML structure, CSS layout rules, and JavaScript logic engine are stored in the device's secure sandboxed memory after the initial Safari load.
-
+<br>
 Persistent Web App (PWA) Properties: Utilizing Apple WebKit meta tags, the app launches inside an isolated fullscreen wrapper directly from the iOS Home Screen, bypassing browser search bars.
-
+<br>
 Data Schema & Storage Architecture
 The system parses and serializes state changes into JSON strings, writing them to two distinct partitions in the browser's synchronous key-value storage (`localStorage`):
-
+<br>
 1. Active Board (`offline_habits`): Manages current-week data in a 7-element boolean array.
-
+<br>
 2. Historical Vault (`offline_habits_archive`): Holds a deep-copy list of objects containing the habit name, date range, historical checkmarks, and a calculated completion score.
-
+<br>
 Operational Workflow
-
+<br>
 State Updates: When a checkbox is toggled, JavaScript mutates the active array in memory, re-renders the UI grid, and commits the updated state to storage.
-
+<br>
 Archiving Logic: Clicking "Reset Week" triggers a deep copy of the active array. It appends the snapshot alongside a formatted date stamp and performance score (e.g., `5/7`) to the archive vault before re-initializing the active week arrays to `false`.
-
+<br>
 Core Code Logic & Snippets
 The Local Database (`localStorage`)
-
+<br>
 The state is kept in sync by reading and writing to the browser's key-value store using JSON serialization.
-
+<br>
 ```
 
 // Load data on startup
-
+<br>
 let habits = JSON.parse(localStorage.getItem('offline_habits')) || [];
-
+<br>
 let archive = JSON.parse(localStorage.getItem('offline_habits_archive')) || [];
-
+<br>
 // Save state to storage
-
+<br>
 function saveState() {
-
+<br>
     localStorage.setItem('offline_habits', JSON.stringify(habits));
-
+<br>
     localStorage.setItem('offline_habits_archive', JSON.stringify(archive));
-
+<br>
 }
-
+<br>
 ```
 
 Toggling Days
-
+<br>
 A single change in state updates both the local array and triggers a complete screen re-render.
-
+<br>
 ```
 
 function toggleDay(habitIndex, dayIndex) {
-
+<br>
     // Invert boolean state
-
+<br>
     habits[habitIndex].history[dayIndex] = !habits[habitIndex].history[dayIndex];
-
+<br>
     saveState();
-
+<br>
     render();
-
+<br>
 }
 
 ```
-
+<br>
 The Option B Archiving Engine
-
+<br>
 On resetting, active states are deep-copied into the archive array with metadata before the active checklist is cleared.
-
+<br>
 ```
 
 function archiveAndResetWeek() {
-
+<br>
     const todayStr = new Date().toLocaleDateString('en-GB');
-
+<br>
     habits.forEach(habit => {
-
+<br>
         const totalChecked = habit.history.filter(Boolean).length;
-
+<br>
         
 
         // Push snapshot to archive
-
+<br>
         archive.push({
-
+<br>
             name: habit.name,
-
+<br>
             dateRange: todayStr,
-
+<br>
             history: [...habit.history], // Deep copy array
-
+<br>
             score: `${totalChecked}/7`
-
+<br>
         });
-
+<br>
         // Reset active tracking array
-
+<br>
         habit.history = [false, false, false, false, false, false, false];
-
+<br>
     });
-
+<br>
     saveState();
-
+<br>
     render();
-
+<br>
 }
 
 ```
