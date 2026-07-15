@@ -54,6 +54,119 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
+<h3 id="hosting native apps on an iphone">....hosting native apps on an iphone 150720261016</h3>
+<img src="habit_tracker.png" alt="arial view of service station i walk around" style ="width: 40%; margin-top: 20px; height: auto; display: block;"><br>
+
+<p>
+    This was a bit of a pain to get around Apple Os security protocol of prevernting code being executed locally. Tried a few things and then used github to host and open in Safari. Neat solution. Idea was to prove concept that I can host my own applications locally offline. Started the office tracker - see image. 
+
+Zero Network Dependency: The application operates entirely client-side. The HTML structure, CSS layout rules, and JavaScript logic engine are stored in the device's secure sandboxed memory after the initial Safari load.
+
+Persistent Web App (PWA) Properties: Utilizing Apple WebKit meta tags, the app launches inside an isolated fullscreen wrapper directly from the iOS Home Screen, bypassing browser search bars.
+
+Data Schema & Storage Architecture
+The system parses and serializes state changes into JSON strings, writing them to two distinct partitions in the browser's synchronous key-value storage (`localStorage`):
+
+1. Active Board (`offline_habits`): Manages current-week data in a 7-element boolean array.
+
+2. Historical Vault (`offline_habits_archive`): Holds a deep-copy list of objects containing the habit name, date range, historical checkmarks, and a calculated completion score.
+
+Operational Workflow
+
+State Updates: When a checkbox is toggled, JavaScript mutates the active array in memory, re-renders the UI grid, and commits the updated state to storage.
+
+Archiving Logic: Clicking "Reset Week" triggers a deep copy of the active array. It appends the snapshot alongside a formatted date stamp and performance score (e.g., `5/7`) to the archive vault before re-initializing the active week arrays to `false`.
+
+Core Code Logic & Snippets
+The Local Database (`localStorage`)
+
+The state is kept in sync by reading and writing to the browser's key-value store using JSON serialization.
+
+```
+
+// Load data on startup
+
+let habits = JSON.parse(localStorage.getItem('offline_habits')) || [];
+
+let archive = JSON.parse(localStorage.getItem('offline_habits_archive')) || [];
+
+// Save state to storage
+
+function saveState() {
+
+    localStorage.setItem('offline_habits', JSON.stringify(habits));
+
+    localStorage.setItem('offline_habits_archive', JSON.stringify(archive));
+
+}
+
+```
+
+Toggling Days
+
+A single change in state updates both the local array and triggers a complete screen re-render.
+
+```
+
+function toggleDay(habitIndex, dayIndex) {
+
+    // Invert boolean state
+
+    habits[habitIndex].history[dayIndex] = !habits[habitIndex].history[dayIndex];
+
+    saveState();
+
+    render();
+
+}
+
+```
+
+The Option B Archiving Engine
+
+On resetting, active states are deep-copied into the archive array with metadata before the active checklist is cleared.
+
+```
+
+function archiveAndResetWeek() {
+
+    const todayStr = new Date().toLocaleDateString('en-GB');
+
+    habits.forEach(habit => {
+
+        const totalChecked = habit.history.filter(Boolean).length;
+
+        
+
+        // Push snapshot to archive
+
+        archive.push({
+
+            name: habit.name,
+
+            dateRange: todayStr,
+
+            history: [...habit.history], // Deep copy array
+
+            score: `${totalChecked}/7`
+
+        });
+
+        // Reset active tracking array
+
+        habit.history = [false, false, false, false, false, false, false];
+
+    });
+
+    saveState();
+
+    render();
+
+}
+
+```
+</p>
+
 <h3>....Youtube stats for nerds 140720261253</h3>
 <p>There is something perversly satisfying about having nerd statsonscreen with a ultra low res of 144. YouTube Stats for Nerds Summary
 Based on image.png:
