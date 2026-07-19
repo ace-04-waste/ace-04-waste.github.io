@@ -54,6 +54,26 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
+<h3 id="bandit">....playing bandit 100720261053</h3>
+<pre>
+    level 0 : before you can play you need to cal up the switchboard and have them connect you to ext 2220 
+then navigate securty -sshd -provide credentials to security and be authenticated for that line connection
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+dns lookup is phonebook lookup inj reverse for the target domain of overthewire.org
+request to access ext 2220 using -p modifier to avoid public exts
+security guard sshd picks up and ask for pw / accepts the pw and connects 
+you now have acces to that ports files
+you can look around -ls-and see whats what / cat readme reveals a alphamumeric pw that could be useful
+exit
+next we call the same ext and ask for higher level clearance
+ssh bandit1@bandit.labs.overthewire.org -p 2220
+sshd validates auth from the pw i found in readme
+looking around -ls- i found a a file called "-"
+i cant open a file with that name so i give it the dir + name to force it to recognise - as a filename 
+cat ./-
+- opens and i found the next auth token
+</pre>
+
 <h3 id="installing_Zorin">....Installing Zorin 180720261644</h3>
 <p>
     Zorin OS: Brave Browser Installation Guide
