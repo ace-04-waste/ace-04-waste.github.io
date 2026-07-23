@@ -55,13 +55,67 @@
 <h3 id = "top">Thoughts on...</h3>
 <h3>contact: pauldor2026@gmail.com</h3>
 
-[
-  {
-    "call": "google:image_gen",
-    "end_turn": true,
-    "prompt": "A hand-drawn sketch, rendered in quick, imperfect black ballpoint pen lines on cream-colored notebook paper, visualizing the text: 'I recognized even as a 9-year-old that I had a lot of choices... What I did each day would determine the kind of person I’d become.' The drawing features messy, expressive strokes and slight smudges, captured under diffused indoor lighting with the slight texture of the paper visible. The left side, representing the child, depicts a young person, roughly nine years old, with simplified features and short, textured hair (the 9-year-old from image_1.png and image_2.png), looking toward a winding path. The character wears a red shirt rendered with scribbled, messy red pen hatching, creating an 'imperfect' colored effect. The winding path is labeled with shaky text arrows: 'CHOICES MATTER', 'EACH DAY', and 'MY DECISIONS'. The path leads toward different abstract futures: a simplified astronaut figure holding a stylized rocket (labeled 'WHO KNOWS? ASTRONAUT?'), and another path leading to a grounded, hardworking adult figure. The composition contrasts this with the perspective from the text: 'we were responsible for the consequences of our own actions... I will have failed if my kids cant look after themselves by legal adulthood'. On the right side, an adult hand (the hand from image_3.png) is shown actively drawing with a pen, outlining a diagram of a scale, balancing 'PROTECT' (labeled with a small, struggling child figure) with 'BALANCE' (labeled with a confident, walking adult figure by 'LEGAL ADULTHOOD'). Shaky, handwritten text from the original blockquote is integrated directly into the sketch: 'LIFE IS A SERIES OF STRUNG TOGETHER CHOICES' (above the winding path) and 'LONG TERM HARM' (by the unbalanced scale). A rough border with small, abstract sketches of atoms, gears, and a compass rose (from image_4.png) frames the whole page, which has torn edges."
-  }
-]
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto" style="background-color: #fbf9f5; border: 1px solid #dcd6cd; font-family: 'Courier New', monospace;">
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e5e0d8" stroke-width="0.8"/>
+    </pattern>
+    <filter id="ink-bleed">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+
+  <!-- Paper Background -->
+  <rect width="100%" height="100%" fill="#fbf9f5" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Red Notebook Margin -->
+  <path d="M 50,15 L 48,485" stroke="#e8a2a2" stroke-width="1.2" fill="none" opacity="0.7"/>
+
+  <!-- Ink Line-Art -->
+  <g filter="url(#ink-bleed)" stroke="#1a1a24" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Child Figure -->
+    <path d="M 120,310 C 118,290 135,288 138,308 C 140,325 122,328 120,310 Z" stroke-width="2"/>
+    <path d="M 118,295 Q 112,285 122,288 Q 128,280 132,289 Q 142,282 138,298" stroke="#1a1a24" stroke-width="1.5"/>
+    <path d="M 129,325 L 127,375 M 127,340 L 105,355 M 127,340 L 150,330" />
+    <path d="M 127,375 L 112,420 M 127,375 L 142,418" />
+    
+    <!-- Red Pen Scribble/Hatch Fill -->
+    <path d="M 122,333 L 134,337 M 121,342 L 136,345 M 120,351 L 137,352 M 122,360 L 135,362" stroke="#cc2b2b" stroke-width="1.6" opacity="0.85"/>
+
+    <!-- Path of Choices -->
+    <path d="M 145,410 C 220,405 250,350 220,300 C 190,250 280,210 340,230 C 400,250 430,180 480,140" stroke-dasharray="6,4" stroke-width="1.5"/>
+
+    <!-- Handwritten Labels -->
+    <text x="170" y="375" font-size="12" fill="#1a1a24" transform="rotate(-5, 170, 375)">CHOICES</text>
+    <text x="230" y="270" font-size="12" fill="#1a1a24" transform="rotate(12, 230, 270)">DECISIONS</text>
+    
+    <!-- Astronaut / Space Goal -->
+    <g transform="translate(470, 70)">
+      <path d="M 30,10 C 45,25 45,60 45,80 L 15,80 C 15,60 15,25 30,10 Z" />
+      <path d="M 15,60 L 2,85 L 15,80 M 45,60 L 58,85 L 45,80" />
+      <circle cx="30" cy="40" r="7" />
+      <path d="M 20,82 L 18,102 L 25,87 L 30,107 L 35,86 L 42,100 L 40,82" stroke="#cc2b2b" stroke-width="1.5"/>
+      <text x="-20" y="120" font-size="11" fill="#cc2b2b" transform="rotate(-3)">WALK IN SPACE?</text>
+    </g>
+
+    <!-- Scale Diagram -->
+    <g transform="translate(520, 280)">
+      <path d="M 100,120 L 140,120 M 120,120 L 120,50 M 90,50 L 150,30" stroke-width="2"/>
+      <path d="M 90,50 L 70,80 M 90,50 L 110,80 M 65,80 L 115,80" />
+      <path d="M 150,30 L 135,70 M 150,30 L 165,70 M 128,70 L 172,70" />
+      <text x="50" y="102" font-size="10" fill="#1a1a24">PROTECT</text>
+      <text x="125" y="92" font-size="10" fill="#cc2b2b">BALANCE</text>
+    </g>
+
+    <!-- Header Quote -->
+    <text x="70" y="60" font-size="14" fill="#cc2b2b" font-weight="bold" transform="rotate(-1)">
+      "my dream provided direction to my life."
+    </text>
+  </g>
+</svg>
 
 <h3 id="chris hasdfield">....an astronaut's guide to life on earth 230720261020</h3>
 <p>
